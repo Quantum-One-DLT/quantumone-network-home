@@ -15,5 +15,5 @@ app.get("/*", (_, res) => {
   res.sendFile(join(__dirname, "index.html"));
 });
 
-// Listen on port 3000
-app.listen(3000, () => console.log("Application running on port 3000"));
+// Listen on port 3001
+app.listen(3001, () => console.log("Application running on port 3001"));
