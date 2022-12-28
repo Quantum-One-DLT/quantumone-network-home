@@ -12139,7 +12139,8 @@ figcaption {
   .button {
     margin-bottom: 10px;
     border-radius: 15px;
-    background-color: #1d2838;
+    background-color: rgba(29, 40, 56, 0.85);
+    opacity: 0.85;
     font-family: Exo, sans-serif;
     font-weight: 400;
     background-clip: border-box;

@@ -7857,13 +7857,13 @@ function handleRedirect(defaultRedirectPath) {
   if (redirectPath) {
     return includeDelay ? setTimeout(function () {
       return window.Webflow.location(redirectPath);
-    }, 3001) : window.Webflow.location(redirectPath);
+    }, 3000) : window.Webflow.location(redirectPath);
   }
 
   if (!defaultRedirectPath) return;
   return includeDelay ? setTimeout(function () {
     return window.Webflow.location(defaultRedirectPath);
-  }, 3001) : window.Webflow.location(defaultRedirectPath);
+  }, 3000) : window.Webflow.location(defaultRedirectPath);
 }
 
 /***/ }),
@@ -16928,7 +16928,7 @@ module.exports = {
 
 // a string of all valid unicode whitespaces
 module.exports = '\u0009\u000A\u000B\u000C\u000D\u0020\u00A0\u1680\u2000\u2001\u2002' +
-  '\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3001\u2028\u2029\uFEFF';
+  '\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
 
 /***/ }),
@@ -40167,7 +40167,7 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * jQuery(window).on('scroll', _.throttle(updatePosition, 100));
  *
  * // Invoke `renewToken` when the click event is fired, but not more than once every 5 minutes.
- * var throttled = _.throttle(renewToken, 300100, { 'trailing': false });
+ * var throttled = _.throttle(renewToken, 300000, { 'trailing': false });
  * jQuery(element).on('click', throttled);
  *
  * // Cancel the trailing throttled invocation.
@@ -54035,7 +54035,7 @@ var rsAstralRange = '\\ud800-\\udfff',
     rsMathOpRange = '\\xac\\xb1\\xd7\\xf7',
     rsNonCharRange = '\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf',
     rsPunctuationRange = '\\u2000-\\u206f',
-    rsSpaceRange = ' \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3001',
+    rsSpaceRange = ' \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000',
     rsUpperRange = 'A-Z\\xc0-\\xd6\\xd8-\\xde',
     rsVarRange = '\\ufe0e\\ufe0f',
     rsBreakRange = rsMathOpRange + rsNonCharRange + rsPunctuationRange + rsSpaceRange;
