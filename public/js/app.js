@@ -20,16 +20,10 @@ const configureClient = async () => {
 
 window.onload = async () => {
   await configureClient();
-}
-
-// ..
-
-window.onload = async () => {
-  await configureClient();
 
   // NEW - update the UI state
   updateUI();
-  
+
   const isAuthenticated = await auth0Client.isAuthenticated();
 
   if (isAuthenticated) {
@@ -50,7 +44,7 @@ window.onload = async () => {
     window.history.replaceState({}, document.title, "/");
   }
 };
-
+  
 // NEW
 const updateUI = async () => {
   const isAuthenticated = await auth0Client.isAuthenticated();
@@ -75,8 +69,6 @@ const updateUI = async () => {
   }
 };
 
-// ..
-
 const login = async () => {
   await auth0Client.loginWithRedirect({
     authorizationParams: {
@@ -84,8 +76,6 @@ const login = async () => {
     }
   });
 };
-
-// public/js/app.js
 
 const logout = () => {
   auth0Client.logout({
