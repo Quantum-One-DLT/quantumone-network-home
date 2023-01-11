@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Tue Dec 27 2022 00:18:18 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Mon Jan 09 2023 21:50:13 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="63950d24c7969e230cb7fe46" data-wf-site="637db63d75767f1d33cc96a2" lang="en">
 <head>
   <meta charset="utf-8">
@@ -16,7 +16,6 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="css/main.css" />
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/quantumone-core-a0c6787cb-f2ace4f4eb811.webflow.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -26,6 +25,7 @@
   <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.png" rel="apple-touch-icon">
   <link href="https://quantumone.network/login" rel="canonical">
+  <script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-186286309-1', 'auto');ga('send', 'pageview');</script>
   <script src="https://www.google.com/recaptcha/api.js" type="text/javascript"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--  Start of quantumonedao Zendesk Widget script  -->
@@ -35,36 +35,191 @@
   <script async="" src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
   <!-- End Auth0  -->
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
-  <div class="wf-section">
-    <div>
-      <div class="w-embed"></div>
+  <div class="section wf-section">
+    <div class="content w-container">
+      <div class="block-content">
+        <div class="html w-embed w-script">
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <title>Quantum One DAO Sign In</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+          </head>
+          <style>
+    body, html {
+      height: 100%;
+      background-color: #1e2022;
+      background-image: url(
+       "https://quantumone.b-cdn.net/Untitled%20Design_2-6.jpg");
+      background-size: cover; 
+    }
+    .login-container {
+      position: relative ;
+      height: 100%;
+      width: 100%;
+    }
+    .login-box {
+      position: absolute;
+      right: 50%;
+      transform: translateY(-50%);
+      padding: 15px;
+      background-color: #1e2022;
+      box-shadow: 0px 5px 5px #ccc;
+      border-radius: 6px;
+      border-top: 1px solid #1e2022;
+    }
+    .login-header {
+      text-align: center;
+    }
+    .login-header img {
+      width: 75px;
+    }
+    #error-message {
+      display: none;
+      white-space: break-spaces;
+    }
+  </style>
+          <body>
+            <div class="container-fluid flex-start h-100 text-center">
+              <div class="login-container">
+                <div class="col-xs-12 col-sm-4 col-sm-offset-4 login-box">
+                  <div class="login-header">
+                    <img src="https://quantumone.b-cdn.net/Color%20logo%20-%20no%20background.svg">
+                    <h3>Welcome</h3>
+                    <h5>Sign Up | Sign In</h5>
+                  </div>
+                  <div id="error-message" class="alert alert-danger"></div>
+                  <form onsubmit="return false;" method="post">
+                    <div class="form-group">
+                      <label for="name">Email</label>
+                      <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                      <label for="name">Password</label>
+                      <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                    </div>
+                    <div class="captcha-container form-group"></div>
+                    <button type="submit" id="btn-login" class="btn btn-primary btn-block">
+                      Log In
+                    </button>
+                    <button type="button" id="btn-signup" class="btn btn-default btn-block">
+                      Sign Up
+                    </button>
+                    <hr>
+                    <button type="button" id="btn-github" class="btn btn-default btn-dark btn-block">
+                      Log In with Github
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- [if IE 8]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ie8/0.2.5/ie8.js"></script>
+  <![endif] -->
+            <!-- [if lte IE 9]>
+  <script src="https://cdn.auth0.com/js/polyfills/1.0/base64.min.js"></script>
+  <script src="https://cdn.auth0.com/js/polyfills/1.0/es5-shim.min.js"></script>
+  <![endif] -->
+            <script src="https://cdn.auth0.com/js/auth0/9.18/auth0.min.js"></script>
+            <script src="https://cdn.auth0.com/js/polyfills/1.0/object-assign.min.js"></script>
+            <script>
+    window.addEventListener('load', function() {
+      var config = JSON.parse(
+        decodeURIComponent(escape(window.atob('@@config@@')))
+      );
+      var leeway = config.internalOptions.leeway;
+      if (leeway) {
+        var convertedLeeway = parseInt(leeway);
+        if (!isNaN(convertedLeeway)) {
+          config.internalOptions.leeway = convertedLeeway;
+        }
+      }
+      var params = Object.assign({
+        overrides: {
+          __tenant: config.auth0Tenant,
+          __token_issuer: config.authorizationServer.issuer
+        },
+        domain: config.auth0Domain,
+        clientID: config.clientID,
+        redirectUri: config.callbackURL,
+        responseType: 'code'
+      }, config.internalOptions);
+      var webAuth = new auth0.WebAuth(params);
+      var databaseConnection = 'Username-Password-Authentication';
+      var captcha = webAuth.renderCaptcha(
+        document.querySelector('.captcha-container')
+      );
+      function login(e) {
+        e.preventDefault();
+        var button = this;
+        var username = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        button.disabled = true;
+        webAuth.login({
+          realm: databaseConnection,
+          username: username,
+          password: password,
+          captcha: captcha.getValue()
+        }, function(err) {
+          if (err) displayError(err);
+          button.disabled = false;
+        });
+      }
+      function signup() {
+        var button = this;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        button.disabled = true;
+        webAuth.redirect.signupAndLogin({
+          connection: databaseConnection,
+          email: email,
+          password: password,
+          captcha: captcha.getValue()
+        }, function(err) {
+          if (err) displayError(err);
+          button.disabled = false;
+        });
+      }
+      function loginWithGitHub() {
+        webAuth.authorize({
+          connection: 'github'
+        }, function(err) {
+          if (err) displayError(err);
+        });
+      }
+      function displayError(err) {
+        captcha.reload();
+        var errorMessage = document.getElementById('error-message');
+        errorMessage.innerHTML = err.policy || err.description;
+        errorMessage.style.display = 'block';
+      }
+      document.getElementById('btn-login').addEventListener('click', login);
+      document.getElementById('btn-github').addEventListener('click', loginWithGitHub);
+      document.getElementById('btn-signup').addEventListener('click', signup);
+    });
+  </script>
+          </body>
+          </html>
+        </div>
+      </div>
     </div>
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=637db63d75767f1d33cc96a2" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <script async="" src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+  <script src="js/app.js"></script>
   <h2>Quantum One DAO</h2>
   <p>Sign up | Login</p>
   <button id="btn-login" disabled="false" onclick="login()">Log in</button>
   <button id="btn-logout" disabled="false" onclick="logout()">Log out</button>
-  <div class="hidden" id="gated-content">
-    <p>
-      You're seeing this content because you're currently
-      <strong>logged in</strong>.
-    </p>
-    <label>
-      Access token:
-      <pre id="ipt-access-token"></pre>
-    </label>
-    <label>
-      User profile:
-      <pre id="ipt-user-profile"></pre>
-    </label>
-  </div>
-  <script async src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
-  <script async src="js/app.js"></script>
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

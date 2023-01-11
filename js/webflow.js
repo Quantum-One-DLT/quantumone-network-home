@@ -1821,11 +1821,14 @@ var _exportNames = {
   MAX_UPDATE_USER_DATA_FIELDS: true,
   USYS_FIELD_PATH: true,
   USYS_CONTEXT_PATH: true,
+  TEMP_STATE_PATH: true,
   USER_ACCESS_META_OPTIONS: true,
+  EXCEEDS_MAX_FILE_SIZE_ERROR: true,
+  EXCEEDS_MAX_IMAGE_SIZE_ERROR: true,
   USER_STATUSES: true,
   USER_PAGE_SIZE: true
 };
-exports.USER_PAGE_SIZE = exports.USER_STATUSES = exports.USER_ACCESS_META_OPTIONS = exports.USYS_CONTEXT_PATH = exports.USYS_FIELD_PATH = exports.MAX_UPDATE_USER_DATA_FIELDS = exports.MAX_USER_DATA_FIELDS = exports.SETUP_GUIDE_ALL_KEYS = exports.SETUP_GUIDE_KEYS = exports.DEFAULT_USER_FIELDS = exports.USER_FIELD_DEFAULTS = exports.NEW_USER_FIELD_ID = exports.USER_FIELD_FORM_ID = exports.CONFIRM_UNSAVED_CHANGES_COPY = exports.EMAIL_TEMPLATE_TYPES = exports.MEMBERSHIPS_EMAIL_KEYS = exports.SUBSCRIPTION_EMAIL_TYPES = exports.ACCESS_GROUP_FREE_TYPE = exports.ACCESS_GROUP_ADMISSION_TYPE = exports.ACCESS_GROUP_INLINE_PRODUCT_FIELD_SLUG = exports.USYS_TOKEN_TYPES = exports.MAX_GROUP_ID_LENGTH = exports.MIN_GROUP_ID_LENGTH = exports.MAX_NUM_GROUPS = exports.MAX_NUM_USERS = exports.DEFAULT_TOKEN_AGE_MS = exports.DEFAULT_SESSION_TOKEN_DURATION_IN_MS = exports.DEFAULT_SESSION_DURATION_IN_MS = exports.LOGGEDIN_COOKIE_NAME = exports.SESSION_COOKIE_NAME = exports.PASSWORD_MAX_LENGTH = exports.PASSWORD_MIN_LENGTH = exports.DEFAULT_STYLES = exports.USYS_PAGE_UTIL_KEYS = exports.USYS_RESERVED_SLUGS = exports.USYS_PAGE_SETTINGS = exports.USYS_USER_STATES = exports.USYS_INPUT_SIGN_UP_IDS = exports.USYS_INPUT_TYPES = exports.USYS_FORM_TYPES = exports.USYS_DOM_CLASS_NAMES = exports.USYS_DATA_ATTRS = exports.USYS_UTILITY_KEYS = exports.TEXT_INPUT_TYPE_TO_FIELD_TYPE = exports.NAMES_FROM_USER_FIELDS = exports.KEY_FROM_RESERVED_USER_FIELD = exports.RESERVED_USER_FIELDS = exports.RESERVED_USER_PREFIX = exports.TEMP_IS_TESTING_FILE_INPUT = void 0;
+exports.USER_PAGE_SIZE = exports.USER_STATUSES = exports.EXCEEDS_MAX_IMAGE_SIZE_ERROR = exports.EXCEEDS_MAX_FILE_SIZE_ERROR = exports.USER_ACCESS_META_OPTIONS = exports.TEMP_STATE_PATH = exports.USYS_CONTEXT_PATH = exports.USYS_FIELD_PATH = exports.MAX_UPDATE_USER_DATA_FIELDS = exports.MAX_USER_DATA_FIELDS = exports.SETUP_GUIDE_ALL_KEYS = exports.SETUP_GUIDE_KEYS = exports.DEFAULT_USER_FIELDS = exports.USER_FIELD_DEFAULTS = exports.NEW_USER_FIELD_ID = exports.USER_FIELD_FORM_ID = exports.CONFIRM_UNSAVED_CHANGES_COPY = exports.EMAIL_TEMPLATE_TYPES = exports.MEMBERSHIPS_EMAIL_KEYS = exports.SUBSCRIPTION_EMAIL_TYPES = exports.ACCESS_GROUP_FREE_TYPE = exports.ACCESS_GROUP_ADMISSION_TYPE = exports.ACCESS_GROUP_INLINE_PRODUCT_FIELD_SLUG = exports.USYS_TOKEN_TYPES = exports.MAX_GROUP_ID_LENGTH = exports.MIN_GROUP_ID_LENGTH = exports.MAX_NUM_GROUPS = exports.MAX_NUM_USERS = exports.DEFAULT_TOKEN_AGE_MS = exports.DEFAULT_SESSION_TOKEN_DURATION_IN_MS = exports.DEFAULT_SESSION_DURATION_IN_MS = exports.LOGGEDIN_COOKIE_NAME = exports.SESSION_COOKIE_NAME = exports.PASSWORD_MAX_LENGTH = exports.PASSWORD_MIN_LENGTH = exports.DEFAULT_STYLES = exports.USYS_PAGE_UTIL_KEYS = exports.USYS_RESERVED_SLUGS = exports.USYS_PAGE_SETTINGS = exports.USYS_USER_STATES = exports.USYS_INPUT_SIGN_UP_IDS = exports.USYS_INPUT_TYPES = exports.USYS_FORM_TYPES = exports.USYS_DOM_CLASS_NAMES = exports.USYS_DATA_ATTRS = exports.USYS_UTILITY_KEYS = exports.TEXT_INPUT_TYPE_TO_FIELD_TYPE = exports.NAMES_FROM_USER_FIELDS = exports.KEY_FROM_RESERVED_USER_FIELD = exports.RESERVED_USER_FIELDS = exports.RESERVED_USER_PREFIX = exports.TEMP_IS_TESTING_FILE_INPUT = void 0;
 
 var _extends2 = _interopRequireDefault(__webpack_require__(11));
 
@@ -2239,8 +2242,21 @@ var USYS_CONTEXT_PATH = [{
   at: 'context'
 }];
 exports.USYS_CONTEXT_PATH = USYS_CONTEXT_PATH;
+var TEMP_PATH = [{
+  "in": 'Record',
+  at: 'temp'
+}];
+var TEMP_STATE_PATH = [].concat(TEMP_PATH, [{
+  "in": 'Record',
+  at: 'state'
+}]);
+exports.TEMP_STATE_PATH = TEMP_STATE_PATH;
 var USER_ACCESS_META_OPTIONS = [_types.USYS_ACCESS_TYPES.LOGGED_IN];
 exports.USER_ACCESS_META_OPTIONS = USER_ACCESS_META_OPTIONS;
+var EXCEEDS_MAX_FILE_SIZE_ERROR = 'Maximum size allowed for a file upload is 10000kb / 10mb.';
+exports.EXCEEDS_MAX_FILE_SIZE_ERROR = EXCEEDS_MAX_FILE_SIZE_ERROR;
+var EXCEEDS_MAX_IMAGE_SIZE_ERROR = 'Maximum size allowed for a image upload is 4000kb / 4mb.';
+exports.EXCEEDS_MAX_IMAGE_SIZE_ERROR = EXCEEDS_MAX_IMAGE_SIZE_ERROR;
 var USER_STATUSES = {
   invited: 'Invited',
   verified: 'Verified',
@@ -54578,8 +54594,7 @@ var ADD_TO_CART_ERRORS = {
     id: ADD_TO_CART_MIXED_ERR,
     category: COMMERCE_ERROR_CATEGORY.GENERAL,
     name: 'Add to mixed Cart error',
-    copy: 'You can’t purchase another product with a subscription.',
-    beta: 'userSystems'
+    copy: 'You can’t purchase another product with a subscription.'
   },
   BUY_NOW: {
     id: 'BUY_NOW_ERROR',
@@ -59876,7 +59891,7 @@ var _logInErrorStates, _signUpErrorStates, _updatePasswordErrorS2;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.updateAccountErrorStates = exports.UPDATE_ACCOUNT_ERROR_CODES = exports.resetPasswordErrorStates = exports.updatePasswordErrorStates = exports.signUpErrorStates = exports.SIGNUP_ERROR_CATEGORY = exports.logInErrorStates = exports.__DEPRECATED__logInErrorStates = exports.RESET_PASSWORD_UI_ERROR_CODES = exports.UPDATE_PASSWORD_UI_ERROR_CODES = exports.ERROR_ATTRIBUTE_PREFIX = exports.SIGNUP_UI_ERROR_CODES = exports.LOGIN_UI_ERROR_CODES = exports.ErrorStateToCopy = exports.ERROR_STATE = exports.ERROR_MSG_CLASS = void 0;
+exports.updateAccountErrorStates = exports.UPDATE_ACCOUNT_ERROR_CODES = exports.resetPasswordErrorStates = exports.updatePasswordErrorStates = exports.signUpErrorStates = exports.SIGNUP_ERROR_CATEGORY = exports.logInErrorStates = exports.__DEPRECATED__logInErrorStates = exports.FORM_GENERIC_ERROR_PATH = exports.FORM_TYPE_ERROR_PATH = exports.FORM_TOO_SMALL_ERROR_PATH = exports.FORM_TOO_LARGE_ERROR_PATH = exports.USER_FILE_UPLOAD_ERRORS = exports.RESET_PASSWORD_UI_ERROR_CODES = exports.UPDATE_PASSWORD_UI_ERROR_CODES = exports.ERROR_ATTRIBUTE_PREFIX = exports.SIGNUP_UI_ERROR_CODES = exports.LOGIN_UI_ERROR_CODES = exports.SERVER_DATA_VALIDATION_ERRORS = exports.ErrorStateToCopy = exports.ERROR_STATE = exports.ERROR_MSG_CLASS = void 0;
 var ERROR_MSG_CLASS = 'user-form-error-msg';
 exports.ERROR_MSG_CLASS = ERROR_MSG_CLASS;
 var ERROR_STATE = {
@@ -59926,9 +59941,18 @@ var ErrorStateToCopy = function ErrorStateToCopy(errorStateType, id) {
 
   console.error("copy for ".concat(errorStateType, " not found"));
   return null;
-};
+}; // error codes returned after field validation. warning: shipped js will use this so add but never remove from it.
+
 
 exports.ErrorStateToCopy = ErrorStateToCopy;
+var SERVER_DATA_VALIDATION_ERRORS = {
+  MinSizeError: 'MinSizeError',
+  MaxSizeError: 'MaxSizeError,',
+  ExtensionsError: 'ExtensionsError',
+  DefaultError: 'DefaultError' // add more here
+
+};
+exports.SERVER_DATA_VALIDATION_ERRORS = SERVER_DATA_VALIDATION_ERRORS;
 var LOGIN_UI_ERROR_CODES = {
   GENERAL_ERROR: 'GENERAL_ERROR',
   INVALID_EMAIL_OR_PASSWORD: 'INVALID_EMAIL_OR_PASSWORD'
@@ -59961,7 +59985,58 @@ exports.UPDATE_PASSWORD_UI_ERROR_CODES = UPDATE_PASSWORD_UI_ERROR_CODES;
 var RESET_PASSWORD_UI_ERROR_CODES = {
   GENERAL_ERROR: 'GENERAL_ERROR'
 };
-exports.RESET_PASSWORD_UI_ERROR_CODES = RESET_PASSWORD_UI_ERROR_CODES; // this exists to support sites using the UserLoginErrorMsg atom
+exports.RESET_PASSWORD_UI_ERROR_CODES = RESET_PASSWORD_UI_ERROR_CODES;
+var TOO_LARGE_ERR = 'TOO_LARGE_ERROR';
+var TOO_SMALL_ERR = 'TOO_SMALL_ERROR';
+var TYPE_ERR = 'TYPE_ERROR';
+var GENERIC_ERR = 'GENERIC_ERROR';
+var USER_FILE_UPLOAD_ERRORS = {
+  GENERIC: {
+    id: GENERIC_ERR,
+    msg: 'Upload failed. Something went wrong. Please retry.',
+    path: ['data', 'form', GENERIC_ERR]
+  },
+  TOO_LARGE: {
+    id: TOO_LARGE_ERR,
+    msg: 'Upload failed. File too large.',
+    path: ['data', 'form', TOO_LARGE_ERR]
+  },
+  TOO_SMALL: {
+    id: TOO_SMALL_ERR,
+    msg: 'Upload failed. File too small.',
+    path: ['data', 'form', TOO_SMALL_ERR]
+  },
+  TYPE: {
+    id: TYPE_ERR,
+    msg: 'Upload failed. Invalid file type.',
+    path: ['data', 'form', TYPE_ERR]
+  }
+};
+exports.USER_FILE_UPLOAD_ERRORS = USER_FILE_UPLOAD_ERRORS;
+var FORM_PATH = [{
+  "in": 'Record',
+  at: 'form'
+}];
+var FORM_TOO_LARGE_ERROR_PATH = [].concat(FORM_PATH, [{
+  "in": 'Record',
+  at: TOO_LARGE_ERR
+}]);
+exports.FORM_TOO_LARGE_ERROR_PATH = FORM_TOO_LARGE_ERROR_PATH;
+var FORM_TOO_SMALL_ERROR_PATH = [].concat(FORM_PATH, [{
+  "in": 'Record',
+  at: TOO_SMALL_ERR
+}]);
+exports.FORM_TOO_SMALL_ERROR_PATH = FORM_TOO_SMALL_ERROR_PATH;
+var FORM_TYPE_ERROR_PATH = [].concat(FORM_PATH, [{
+  "in": 'Record',
+  at: TYPE_ERR
+}]);
+exports.FORM_TYPE_ERROR_PATH = FORM_TYPE_ERROR_PATH;
+var FORM_GENERIC_ERROR_PATH = [].concat(FORM_PATH, [{
+  "in": 'Record',
+  at: GENERIC_ERR
+}]);
+exports.FORM_GENERIC_ERROR_PATH = FORM_GENERIC_ERROR_PATH; // this exists to support sites using the UserLoginErrorMsg atom
 
 var __DEPRECATED__logInErrorStates = (0, _defineProperty2["default"])({}, LOGIN_UI_ERROR_CODES.GENERAL_ERROR, {
   id: LOGIN_UI_ERROR_CODES.GENERAL_ERROR,
